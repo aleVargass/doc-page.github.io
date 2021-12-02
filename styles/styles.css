@@ -1,0 +1,134 @@
+:root {
+    --black-opacity: rgba(0,0,0,.9);
+    --light-olive: #e9faca; 
+    --olive: #cde0c2;
+    --white: #fff;
+    --smoke: #dfdfdf;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black-opacity);
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+
+body {
+    display: grid;
+    grid-template-columns: 20em auto;
+    grid-template-rows: auto 2em;
+    grid-template-areas: 
+    "header main"
+    "header footer";
+}
+
+header {
+    background-color: var(--white);
+    width: 20em;
+    position: fixed;
+    height: 100%;
+    grid-area: header; 
+    overflow-y: auto;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+#arrow-list{
+    display: none;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.nav-link {
+    color: var(--black-opacity);
+    text-decoration: none;
+    padding: 12.5px 10px;
+}
+
+.nav-link:hover {
+    background-color: var(--smoke);
+}
+
+main {
+    position: relative;
+    grid-area: main;
+    min-width: 450px;
+    margin-left: 20px;
+    overflow-x: auto;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+pre {
+    margin: 20px;
+    background-color:var(--light-olive);
+    border-radius: 2px;
+    padding: 5px;
+    border: var(--olive) solid 1px;
+    white-space: pre-line;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media (max-width: 805px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 2em;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        z-index: 1;
+        text-align: center;
+    }
+    
+    #arrow-list {
+        display: block;
+        border-top: var(--black-opacity) solid 1px;
+        border-bottom: var(--black-opacity) solid 1px;
+    }
+
+    #navbar {
+        display: none;
+        background-color: inherit;
+        border-bottom: var(--black-opacity) solid 1px;
+    }
+
+    #navbar.display {
+        display: flex;
+    }
+    
+    #arrow-list:hover {
+        background-color: var(--smoke);
+        cursor: pointer;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    section {
+        padding-top: 4em;
+    }
+}
