@@ -1,4 +1,5 @@
-# doc-page.github.io
-Technical documentation page about Python
+# Technical documentation page: Python
 
-Check it! https://alevargass.github.io/doc-page.github.io/
+
+## A Python technical documentation single page
+
